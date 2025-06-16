@@ -12,15 +12,14 @@
             background: #000;
             color: #fff;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
         .spiral {
             position: fixed;
+            top: 0;
+            left: 0;
             width: 100vw;
             height: 100vh;
             background: conic-gradient(
@@ -30,10 +29,13 @@
                 rgba(0, 0, 0, 0) 50%
             );
             animation: rotate 10s linear infinite;
+            pointer-events: none;
         }
 
         .wave {
             position: fixed;
+            top: 0;
+            left: 0;
             width: 200%;
             height: 200%;
             top: -50%;
@@ -45,6 +47,7 @@
                 transparent 100%
             );
             animation: wave 8s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes rotate {
@@ -66,18 +69,22 @@
         }
 
         .container {
-            max-width: 800px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 2rem;
+            box-sizing: border-box;
             position: relative;
-            z-index: 1;
         }
 
         .text {
+            max-width: 800px;
             font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
             position: relative;
             z-index: 2;
+            padding: 1rem;
         }
 
         .text span {
@@ -85,6 +92,7 @@
             margin-bottom: 1rem;
             opacity: 0;
             animation: fadeIn 0.5s forwards;
+            white-space: pre-wrap;
         }
 
         @keyframes fadeIn {
