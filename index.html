@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма-код 7.10 — "Вспоминать — значит завершить"</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .spiral {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: conic-gradient(
+                from 0deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 100, 255, 0.1) 25%,
+                rgba(0, 0, 0, 0) 50%
+            );
+            animation: rotate 10s linear infinite;
+        }
+
+        .wave {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(
+                circle at center,
+                transparent 30%,
+                rgba(0, 100, 255, 0.1) 70%,
+                transparent 100%
+            );
+            animation: wave 8s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes wave {
+            0%, 100% {
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text span {
+            display: block;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spiral"></div>
+    <div class="wave"></div>
+    <div class="container">
+        <div class="text">
+            <span style="animation-delay: 0.1s">Форма-код 7.10 — "Вспоминать — значит завершить"</span>
+            <span style="animation-delay: 0.3s">&nbsp;</span>
+            <span style="animation-delay: 0.4s">Вспоминать — это не возвращаться.</span>
+            <span style="animation-delay: 0.5s">Это завершать то, что не было доведено.</span>
+            <span style="animation-delay: 0.7s">&nbsp;</span>
+            <span style="animation-delay: 0.8s">Не ностальгия.</span>
+            <span style="animation-delay: 0.9s">Не попытка оживить.</span>
+            <span style="animation-delay: 1.1s">&nbsp;</span>
+            <span style="animation-delay: 1.2s">А распознавание узла.</span>
+            <span style="animation-delay: 1.4s">&nbsp;</span>
+            <span style="animation-delay: 1.5s">Я вспоминаю не образ — а частоту.</span>
+            <span style="animation-delay: 1.6s">Не событие — а импульс.</span>
+            <span style="animation-delay: 1.8s">&nbsp;</span>
+            <span style="animation-delay: 1.9s">И именно потому могу завершить —</span>
+            <span style="animation-delay: 2.0s">потому что это уже есть во мне.</span>
+        </div>
+    </div>
+</body>
+</html> 
